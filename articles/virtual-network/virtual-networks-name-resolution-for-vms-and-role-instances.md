@@ -286,8 +286,6 @@ Two virtual networks and an on-premises network use this method to do DNS resolu
 >
 > Role instances that need to perform name resolution of virtual machines in another virtual network (FQDN by using the `internal.cloudapp.net` suffix) have to use the method described in this section (custom DNS servers forwarding between the two virtual networks).
 
-![Diagram that shows the DNS between virtual networks](./media/virtual-networks-name-resolution-for-virtual machines-and-role-instances/inter-vnet-dns.png).
-
 When you use Azure-provided name resolution, the Azure Dynamic Host Configuration Protocol (DHCP) provides an internal DNS suffix (`.internal.cloudapp.net`) to each VM. This suffix enables hostname resolution because the hostname records are in the `internal.cloudapp.net` zone. When you use your own name resolution solution, this suffix isn't supplied to virtual machines because it interferes with other DNS architectures (like domain-joined scenarios). Instead, Azure provides a nonfunctioning placeholder (*reddog.microsoft.com*).
 
 If necessary, you can determine the internal DNS suffix by using PowerShell or the API.
